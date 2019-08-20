@@ -23,14 +23,18 @@
                         </goals>
                         <configuration>
                             <target>
-                                <get src="http://opensource.spotify.com/cefbuilds/cef_binary_76.1.9%2Bg2cf916e%2Bchromium-76.0.3809.87_windows32.tar.bz2"
-                                     dest="${project.build.directory}/chromium-76.0.3809.87_windows32.tar.bz2"
+                                <get src="http://opensource.spotify.com/cefbuilds/cef_binary_76.1.9%2Bg2cf916e%2Bchromium-76.0.3809.87_windows32_client.tar.bz2"
+                                     dest="${project.build.directory}/chromium-76.0.3809.87_windows32_client.tar.bz2"
                                      verbose="false"
                                      usetimestamp="true"/>
 
                                 <bunzip2
-                                        src="${project.build.directory}/chromium-76.0.3809.87_windows32.tar.bz2"
-                                        dest="${project.build.directory}/unzip/"
+                                        src="${project.build.directory}/chromium-76.0.3809.87_windows32_client.tar.bz2"
+                                        dest="${project.build.directory}/chromium-76.0.3809.87_windows32_client.tar"
+                                />
+                                <untar
+                                        src="${project.build.directory}/chromium-76.0.3809.87_windows32_client.tar"
+                                        dest="${project.build.directory}/chromium-76.0.3809.87_windows32_client"
                                 />
                             </target>
 
